@@ -1,0 +1,63 @@
+body {
+    background: #fff;
+}
+
+.block1 { 
+    position: relative;
+    left: 100;
+    top: 100;
+   }
+
+.block2 { 
+    position: relative;
+    left: 100;
+    top: 400;
+   }
+
+.block3 { 
+    position: relative;
+    left: 100;
+    top: 700;
+   }
+
+.block4 { 
+    position: relative;
+    left: 400;
+    top: 100;
+   }
+
+.block5 { 
+    position: relative;
+    left: 400;
+    top: 300;
+   }
+
+.block6 { 
+    position: relative;
+    left: 400;
+    top: 500;
+   }
+
+.block7 { 
+    position: relative;
+    left: 400;
+    top: 700;
+   }
+
+.block8 { 
+    position: relative;
+    left: 700;
+    top: 100;
+   }
+
+.block9 { 
+    position: relative;
+    left: 700;
+    top: 400;
+   }
+
+.block10 { 
+    position: relative;
+    left: 700;
+    top: 700;
+   }
