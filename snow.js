@@ -1,5 +1,5 @@
 const snow = [];
-for (i = 0; i < 50; i += 1){
+for (let i = 0; i < 50; i += 1){
     let div = document.createElement('div');
     div.className = "snowflake";
     document.body.insertBefore(div, document.body.firstChild);
@@ -8,7 +8,7 @@ for (i = 0; i < 50; i += 1){
 
 let max = snow.length;
     
-for (i = 0; i < max; i += 1){
+for (let i = 0; i < max; i += 1){
     let x_position = Math.round(Math.random() * (document.body.offsetWidth - 50));
     let y_position = Math.round(Math.random() * (document.body.offsetHeight - 50));
     // 50 - это размер картинки, чтобы не смещалась за пределы body
