@@ -20,14 +20,12 @@ let start = Date.now();
 let timer = setInterval(function() {
     // вычислить сколько времени прошло с начала анимации
     let timePassed = Date.now() - start;
-    if (timePassed >= 5000) {
-      clearInterval(timer); // конец через 2 секунды
-      return;
-    }
 // рисует состояние анимации, соответствующее времени timePassed
 draw(timePassed);
 }, 20);
 
 function draw(timePassed) {
-    snow[0].style.top = timePassed / 5;
+    for (let i = 0; i < 50; i += 1){
+    snow[i].style.top = timePassed / 5;
+    }
 }
