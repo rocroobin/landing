@@ -1,34 +1,23 @@
-const snow = [];
-const speed = [];
-for (let i = 0; i < 50; i += 1){
-    let div = document.createElement('div');
-    div.className = "snowflake";
-    document.body.insertBefore(div, document.body.firstChild);
-    snow[i] = div;
-    speed[i] = Math.random() * (4 - 1) + 1;
-}
+class SnowFlake {
 
-let max = snow.length;
-
-for (let i = 0; i < max; i += 1){
-    let x_position = Math.round(Math.random() * (document.body.offsetWidth - 50));
-    // 50 - это размер картинки, чтобы не смещалась за пределы body
-    let y_position = Math.round(Math.random() * (document.body.offsetHeight - 50));
-    snow[i].style.left = x_position;
-    snow[i].style.top = y_position;
-}
-
-let timer = setInterval(function() {
-    // вычислить сколько времени прошло с начала анимации
-    // рисует состояние анимации, соответствующее времени timePassed
-    draw();
-}, 20);
-
-function draw() {
-    for (let i = 0; i < max; i += 1){
-    snow[i].style.top = parseInt(snow[i].style.top) + speed[i];
-    if (parseInt(snow[i].style.top) > document.body.clientHeight - 50){
-        snow[i].style.top = -50;
+    constructor() {
+        this.el = document.createElement('div');
+        this.speed = Math.random() * (4 - 1) + 1;
+        this.x = Math.round(Math.random() * (document.body.offsetWidth - 50));
+        this.y = Math.round(Math.random() * (document.body.offsetHeight - 50));
+        this.el.className = "snowflake";
+        document.body.insertBefore(this.el, document.body.firstChild);
     }
+
+    move() {
+        this.y = this.y + this.speed;
+        if (this.y > document.body.clientHeight) {
+          this.y = -50;
+        }
+    }
+
+    draw() {
+        this.el.style.top = this.y;
+        this.el.style.left = this.x;
     }
 }
